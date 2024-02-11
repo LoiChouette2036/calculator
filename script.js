@@ -21,16 +21,14 @@ let secondNumber;
 function operate (number1, number2, operator){
     switch(operator){
         case "/":
-            divide(number1,number2);
-            break;
+            return divide(number1,number2);
         case "*":
-            multiply(number1,number2);
-            break;
+            return multiply(number1,number2);
         case "-":
-            subtract(number1,number2);
-            break;
+            return subtract(number1,number2);
         case "+":
-            add(number1,number2);
-            break;
+            return add(number1,number2);
+        default : 
+            console.log("it's not working");
     }
 }
