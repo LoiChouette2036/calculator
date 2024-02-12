@@ -14,9 +14,6 @@ function divide (number1, number2){
     return number1 / number2;
 }
 
-let firstNumber;
-let operator;
-let secondNumber;
 
 function operate (number1, number2, operator){
     switch(operator){
@@ -33,6 +30,12 @@ function operate (number1, number2, operator){
     }
 }
 
+
+let firstNumber;
+let operator;
+let secondNumber;
+let operationDisplay="";
+
 const resultDisplay = document.getElementById("display");//select element that display result (the rectangle)
 
 const btns = document.querySelectorAll("button");
@@ -41,7 +44,29 @@ btns.forEach (btn => {
         const buttonValue = event.target.textContent; //it take the value of button in a string
         const numericValue = parseInt(buttonValue,10);// it converts in a number
 
+        if(isNaN(buttonValue)){
+            if (buttonValue === "=" ){
+                secondNumber = parseInt(operationDisplay,10);
+                console.log(operate(firstNumber,secondNumber,operator));
+                firstNumber = 0;
+                secondNumber = 0;
+                operationDisplay = "";
+                resultDisplay.textContent = "";
+            } else {
+                operator = buttonValue;
+                firstNumber = parseInt(operationDisplay,10);
+                operationDisplay = "";
+            }
+
+        }
+
+        if(buttonValue >= 0  || buttonValue <= 9){
+            operationDisplay += buttonValue;
+            resultDisplay.textContent = operationDisplay;
+        }
+
+
         //alert("Valeur numérique du bouton : " + numericValue);
-        resultDisplay.textContent = numericValue;
+        //resultDisplay.textContent = numericValue;
     })
 })
