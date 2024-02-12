@@ -13,7 +13,7 @@ body{
 }
 
 /* Styling for the display area of the calculator */
-.display {
+#display {
     width: 333px; /*find with devTools*/
     height: 50px;
     border: 1px solid #000;
