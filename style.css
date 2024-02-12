@@ -1,17 +1,45 @@
-body {
-    min-height: 100vh;
+body{
     margin: 0;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
-.content {
-    display: flex;
-    justify-content: center;
+/* Styling for the main calculator container */
+.calculator {
+    border: 1px solid #000;
+    padding: 10px;
 }
 
-* {
-    border: 1px solid red;
+/* Styling for the display area of the calculator */
+.display {
+    width: 333px; /*find with devTools*/
+    height: 50px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+/* Flex container for each row of buttons, ensures that they align properly */
+.buttons .button-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Shared button styles for numbers, operators, and the equal sign */
+.number, .operator, .equal {
+    background-color: #4CAF50;
+    border: 1px solid #000;
+    color: white;
+    padding : 15px ;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.4s;/* Smooth transition for hover effects */
+    width: 60px;
+    height: 60px;
+    flex: 1 1 auto; /* Flex properties to allow buttons to grow and fill the space */
 }
 
