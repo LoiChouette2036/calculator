@@ -41,7 +41,7 @@ btns.forEach (btn => {
         const buttonValue = event.target.textContent; //it take the value of button in a string
         const numericValue = parseInt(buttonValue,10);// it converts in a number
 
-        alert("Valeur numérique du bouton : " + numericValue);
+        //alert("Valeur numérique du bouton : " + numericValue);
         resultDisplay.textContent = numericValue;
     })
 })

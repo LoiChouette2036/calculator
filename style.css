@@ -18,6 +18,8 @@ body{
     height: 50px;
     border: 1px solid #000;
     margin-bottom: 10px;
+    text-align: right ;/*text to the right when clicking button*/
+    padding-right: 10px; /*not to stick with border*/
 }
 
 /* Flex container for each row of buttons, ensures that they align properly */
