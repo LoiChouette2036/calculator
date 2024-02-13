@@ -35,6 +35,7 @@ let firstNumber;
 let operator;
 let secondNumber;
 let operationDisplay="";
+let result ;
 
 const resultDisplay = document.getElementById("display");//select element that display result (the rectangle)
 
@@ -47,14 +48,16 @@ btns.forEach (btn => {
         if(isNaN(buttonValue)){
             if (buttonValue === "=" ){
                 secondNumber = parseInt(operationDisplay,10);
-                console.log(operate(firstNumber,secondNumber,operator));
+                //console.log(operate(firstNumber,secondNumber,operator));
+                resultDisplay.textContent = operate(firstNumber,secondNumber,operator);
                 firstNumber = 0;
                 secondNumber = 0;
                 operationDisplay = "";
-                resultDisplay.textContent = "";
+                result = 0;
             } else {
                 operator = buttonValue;
                 firstNumber = parseInt(operationDisplay,10);
+                resultDisplay.textContent = operator;
                 operationDisplay = "";
             }
 
@@ -63,6 +66,14 @@ btns.forEach (btn => {
         if(buttonValue >= 0  || buttonValue <= 9){
             operationDisplay += buttonValue;
             resultDisplay.textContent = operationDisplay;
+        }
+
+        if (buttonValue === "delete"){
+                firstNumber = 0;
+                secondNumber = 0;
+                operationDisplay = "";
+                result = 0;
+                resultDisplay.textContent = ""; // to erase everything in the rectangle
         }
 
 
